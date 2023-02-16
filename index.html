@@ -267,7 +267,119 @@ var keyHandlerMinecraft = function (event) {
 
     ecrire(); // Commencer l'écriture automatique
   </script>
+<style>
+#texte {
+  font-family: Arial;
+  color: white;
+  font-size:15px;
+}
+@media (max-width: 768px) {
+  #texte {
+    font-size: 0.8em;
+  }
+}
 
+</style>
+ <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Costumize Homepage
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel"></h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <style>
+          select {
+			font-size: 16px;
+			padding: 5px;
+			border-radius: 3px;
+			border: none;
+			cursor: pointer;
+			margin-right: 10px;
+		}
+		button {
+			padding: 10px;
+			border-radius: 3px;
+			border: none;
+			cursor: pointer;
+			margin-right: 10px;
+		}
+	</style>
+   <label for="font-select">Font:</label>
+	<select id="font-select">
+		<option value="sans-serif">Sans-serif</option>
+		<option value="serif">Serif</option>
+		<option value="monospace">Monospace</option>
+		<option value="cursive">Cursive</option>
+		<option value="fantasy">Fantasy</option>
+    <option value="helvetica">Helvetica</option>
+		<option value="tahoma">Tahoma</option>
+		<option value="corbel">Corbel</option>
+		<option value="verdana">Verdana</option>
+		<option value="consolas">Consolas</option>
+	</select>
+
+	<label for="color-select">Choisissez la couleur de fond :</label>
+	<select id="color-select">
+    <option value="">Option Font</option>
+    <option value="">Blue Go! (Default)</option>
+		<option value="#2c1b1b">Red</option>
+		<option value="#1b2c1e">Green</option>
+		<option value="#2b2c1b">Yellow</option>
+		<option value="#2b1b2c">Purple</option>
+		<option value="#1b2c2b">Blue Cyan</option>
+	</select>
+
+	<button id="reset-button">Reset to default</button>
+
+	<script>
+		const fontSelect = document.getElementById('font-select');
+		const colorSelect = document.getElementById('color-select');
+		const resetButton = document.getElementById('reset-button');
+		const body = document.querySelector('body');
+
+		// Vérifiez si le style de police et la couleur de fond sont déjà définis dans le stockage local
+		if (localStorage.getItem('fontStyle') !== null) {
+			body.style.fontFamily = localStorage.getItem('fontStyle');
+			fontSelect.value = localStorage.getItem('fontStyle');
+		}
+		if (localStorage.getItem('backgroundColor') !== null) {
+			body.style.backgroundColor = localStorage.getItem('backgroundColor');
+			colorSelect.value = localStorage.getItem('backgroundColor');
+		}
+
+		// Ajouter un gestionnaire d'événements pour le changement de style de police
+		fontSelect.addEventListener('change', () => {
+			const selectedFont = fontSelect.value;
+			body.style.fontFamily = selectedFont;
+			localStorage.setItem('fontStyle', selectedFont);
+		});
+
+		// Ajouter un gestionnaire d'événements pour le changement de couleur de fond
+		colorSelect.addEventListener('change', () => {
+			const selectedColor = colorSelect.value;
+			body.style.backgroundColor = selectedColor;
+			localStorage.setItem('backgroundColor', selectedColor);
+		});
+
+		// Ajouter un gestionnaire d'événements pour la réinitialisation
+		resetButton.addEventListener('click', () => {
+			localStorage.clear();
+			location.reload();
+		});
+	</script>   
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
   </body>
 </html>
 
