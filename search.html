@@ -283,15 +283,18 @@ if (window.matchMedia("(min-width: 937px)").matches) {
 javascript:(function(){adid=['adBlock','tadsb'];g=function(x){css=x.createElement('style');css.type='text/css';css.innerHTML='.gsc-adBlock,#adBlock,#tadsb,iframe[src*="doubleclick.net"]{display:none;}';x.body.appendChild(css);for(i=0;i<adid.length;i++){a=x.getElementById(adid[i]);if(a)a.parentElement.removeChild(a)}};f=function(s){g(s);ifrs=s.getElementsByTagName('iframe');if(ifrs){for(i=0;i<ifrs.length;i++){d=ifrs[i].contentWindow.document;f(d)}}};f(document)})();
 </script>
 <style>
-body::-webkit-scrollbar {
+body::-webkit-scrollbar,
+body scrollbar {
     width: 0.2em;
     background-color: #003399;
 }
- 
-body::-webkit-scrollbar-thumb {
+
+body::-webkit-scrollbar-thumb,
+body scrollbar thumb {
   background-color: #b3b3b3;
 }
 </style>
+
 
 <style>
   @media only screen and (max-width: 767px) {
@@ -346,30 +349,7 @@ return false;
 }
 });
 	</script>
-<style>
-	/* Customize the scrollbar */
-::-webkit-scrollbar {
-  width: 12px;
-}
 
-::-webkit-scrollbar-track {
-  background-color: #f1f1f1;
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: #888;
-  border-radius: 6px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background-color: #555;
-}
-
-/* Apply the scrollbar to a specific element */
-.example-element {
-  overflow-y: scroll;
-}
-	</style>
 <script src="https://go.statuspage.io/embed/script.js"></script>
 
 
