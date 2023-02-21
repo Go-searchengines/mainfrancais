@@ -468,16 +468,22 @@ searchBar.addEventListener("input", function() {
 
 	</script>
 	<script>
-		const searchBar = document.getElementById('searchBar');
 const calculator = document.getElementById('calculator');
+const searchBar = document.getElementById('searchBar');
 
 searchBar.addEventListener('keydown', function(event) {
   if (event.key === 'Enter') {
     if (searchBar.value === 'calculator') {
       calculator.style.display = 'block';
+      localStorage.setItem('calculatorDisplayed', 'true');
     }
   }
 });
+
+if (localStorage.getItem('calculatorDisplayed') === 'true') {
+  calculator.style.display = 'block';
+}
+
 
 	</script>
 <script src="https://go.statuspage.io/embed/script.js"></script>
