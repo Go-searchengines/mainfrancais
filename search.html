@@ -163,6 +163,35 @@ input[type="submit"] {
   fill: #b1b1b1;
 }
   </style>
+<div id="calculator" style="display:none;">
+ <div class="calculator">
+  <div class="output">
+    <span id="result"></span>
+  </div>
+  <div class="buttons">
+    <button onclick="clearResult()">C</button>
+    <button onclick="appendValue('(')">(</button>
+    <button onclick="appendValue(')')">)</button>
+    <button onclick="appendValue('/')">/</button>
+    <button onclick="appendValue('7')">7</button>
+    <button onclick="appendValue('8')">8</button>
+    <button onclick="appendValue('9')">9</button>
+    <button onclick="appendValue('*')">*</button>
+    <button onclick="appendValue('4')">4</button>
+    <button onclick="appendValue('5')">5</button>
+    <button onclick="appendValue('6')">6</button>
+    <button onclick="appendValue('-')">-</button>
+    <button onclick="appendValue('1')">1</button>
+    <button onclick="appendValue('2')">2</button>
+    <button onclick="appendValue('3')">3</button>
+    <button onclick="appendValue('+')">+</button>
+    <button onclick="appendValue('0')">0</button>
+    <button onclick="appendValue('.')">.</button>
+    <button onclick="calculate()">=</button>
+  </div>
+</div>
+ 
+</div>
 <script src="https://www.google.com/jsapi"></script>
 <script>google.load('search', '1');</script>
 <script>var customSearchOptions = {}; 
@@ -354,6 +383,90 @@ return false;
   margin-left: 70px;
 }
 	</style>
+
+<style>
+	.calculator {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 300px;
+  margin: 20px auto;
+  background-color: #f9f9f9;
+}
+
+.output {
+  padding: 5px;
+  text-align: right;
+  background-color: #fff;
+  border-radius: 5px 5px 0 0;
+}
+
+.output #result {
+  font-size: 24px;
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 5px;
+}
+
+.buttons button {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 18px;
+  padding: 10px;
+  margin: 5px;
+  background-color: #fff;
+  width: calc(25% - 10px);
+  cursor: pointer;
+}
+
+.buttons button:hover {
+  background-color: #ccc;
+}
+
+	</style>
+	<script>
+	let result = document.getElementById("result");
+
+function appendValue(value) {
+  result.innerText += value;
+}
+
+function clearResult() {
+  result.innerText = "";
+}
+
+function calculate() {
+  try {
+    result.innerText = eval(result.innerText);
+  } catch (error) {
+    result.innerText = "Error";
+  }
+}
+	
+	</script>
+<script>
+	// Récupère la barre de recherche
+var searchBar = document.getElementById("search-bar");
+
+// Ajoute un événement de saisie à la barre de recherche
+searchBar.addEventListener("input", function() {
+  // Récupère la valeur de la barre de recherche
+  var searchText = searchBar.value.toLowerCase();
+
+  // Vérifie si la valeur contient le mot "calculator"
+  if (searchText.includes("calculator")) {
+    // Affiche la section de la calculatrice
+    document.getElementById("calculator").style.display = "block";
+  } else {
+    // Cache la section de la calculatrice
+    document.getElementById("calculator").style.display = "none";
+  }
+});
+
+	</script>
 <script src="https://go.statuspage.io/embed/script.js"></script>
 
 
