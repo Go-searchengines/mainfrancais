@@ -169,7 +169,6 @@ input[type="submit"] {
 <div id="calculator" style="display:none;">
 	<br>
 	<br>
-<div id="calculator">
   <div id="display">0</div>
   <button class="btn" id="clear">C</button>
   <button class="btn" id="backspace">&larr;</button>
@@ -426,7 +425,21 @@ return false;
 }
 
 	</style>
+<script>
+	document.getElementById("standard").addEventListener("submit", function(event) {
+  event.preventDefault(); // Empêcher la soumission du formulaire
 
+  var query = document.getElementById("search-bar").value.toLowerCase();
+  var calculator = document.getElementById("calculator");
+
+  if (query === "calculator") {
+    calculator.style.display = "block";
+  } else {
+    calculator.style.display = "none";
+  }
+});
+
+	</script>
 <script src="https://go.statuspage.io/embed/script.js"></script>
 
 
