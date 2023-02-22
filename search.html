@@ -65,7 +65,30 @@ input[type="submit"] {
     </h1>
 <hr style="background-color: #474747;">
   </center>
+<div id="calculator" style="display:none;">
+<div id="calculator">
+  <div id="display">0</div>
+  <button class="btn" id="clear">C</button>
+  <button class="btn" id="backspace">&larr;</button>
+  <button class="btn" id="divide">/</button>
+  <button class="btn" id="multiply">*</button>
+  <button class="btn" id="subtract">-</button>
+  <button class="btn" id="add">+</button>
+  <button class="btn" id="equals">=</button>
+  <button class="btn" id="decimal">.</button>
+  <button class="btn" id="zero">0</button>
+  <button class="btn" id="one">1</button>
+  <button class="btn" id="two">2</button>
+  <button class="btn" id="three">3</button>
+  <button class="btn" id="four">4</button>
+  <button class="btn" id="five">5</button>
+  <button class="btn" id="six">6</button>
+  <button class="btn" id="seven">7</button>
+  <button class="btn" id="eight">8</button>
+  <button class="btn" id="nine">9</button>
+</div>
 
+</div>
 <style>
  .gsc-result-info {
   color: blue !important;
@@ -163,33 +186,7 @@ input[type="submit"] {
   fill: #b1b1b1;
 }
   </style>
-<div id="calculator" style="display:none;">
- <div class="calculator">
-  <div class="output">
-    <span id="result"></span>
-  </div>
-  <div class="buttons">
-    <button onclick="clearResult()">C</button>
-    <button onclick="appendValue('(')">(</button>
-    <button onclick="appendValue(')')">)</button>
-    <button onclick="appendValue('/')">/</button>
-    <button onclick="appendValue('7')">7</button>
-    <button onclick="appendValue('8')">8</button>
-    <button onclick="appendValue('9')">9</button>
-    <button onclick="appendValue('*')">*</button>
-    <button onclick="appendValue('4')">4</button>
-    <button onclick="appendValue('5')">5</button>
-    <button onclick="appendValue('6')">6</button>
-    <button onclick="appendValue('-')">-</button>
-    <button onclick="appendValue('1')">1</button>
-    <button onclick="appendValue('2')">2</button>
-    <button onclick="appendValue('3')">3</button>
-    <button onclick="appendValue('+')">+</button>
-    <button onclick="appendValue('0')">0</button>
-    <button onclick="appendValue('.')">.</button>
-    <button onclick="calculate()">=</button>
-  </div>
-</div>
+
  
 </div>
 <script src="https://www.google.com/jsapi"></script>
@@ -385,105 +382,58 @@ return false;
 	</style>
 
 <style>
-	.calculator {
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  width: 300px;
-  margin: 20px auto;
-  background-color: #f9f9f9;
-}
-
-.output {
-  padding: 5px;
-  text-align: right;
-  background-color: #fff;
-  border-radius: 5px 5px 0 0;
-}
-
-.output #result {
-  font-size: 24px;
-}
-
-.buttons {
+#calculator {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  padding: 5px;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  margin: auto;
 }
 
-.buttons button {
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 18px;
-  padding: 10px;
-  margin: 5px;
+#display {
+  width: 100%;
+  height: 50px;
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 10px;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.btn {
+  width: 60px;
+  height: 60px;
   background-color: #fff;
-  width: calc(25% - 10px);
+  border: 1px solid #ccc;
+  font-size: 24px;
+  margin: 5px;
   cursor: pointer;
 }
 
-.buttons button:hover {
+.btn:hover {
+  background-color: #f0f0f0;
+}
+
+.btn:active {
   background-color: #ccc;
+  color: #fff;
 }
 
 	</style>
-	<script>
-	let result = document.getElementById("result");
-
-function appendValue(value) {
-  result.innerText += value;
-}
-
-function clearResult() {
-  result.innerText = "";
-}
-
-function calculate() {
-  try {
-    result.innerText = eval(result.innerText);
-  } catch (error) {
-    result.innerText = "Error";
-  }
-}
-	
-	</script>
 <script>
-	// Récupère la barre de recherche
-var searchBar = document.getElementById("search-bar");
+	document.getElementById("standard").addEventListener("submit", function(event) {
+  event.preventDefault(); // Empêcher la soumission du formulaire
+  var query = document.getElementById("search-bar").value.toLowerCase();
 
-// Ajoute un événement de saisie à la barre de recherche
-searchBar.addEventListener("input", function() {
-  // Récupère la valeur de la barre de recherche
-  var searchText = searchBar.value.toLowerCase();
-
-  // Vérifie si la valeur contient le mot "calculator"
-  if (searchText.includes("calculator")) {
-    // Affiche la section de la calculatrice
+  if (query === "calculator") {
     document.getElementById("calculator").style.display = "block";
   } else {
-    // Cache la section de la calculatrice
-    document.getElementById("calculator").style.display = "none";
+    // Autres résultats de recherche
   }
 });
-
-	</script>
-	<script>
-const calculator = document.getElementById('calculator');
-const searchBar = document.getElementById('searchBar');
-
-searchBar.addEventListener('keydown', function(event) {
-  if (event.key === 'Enter') {
-    if (searchBar.value === 'calculator') {
-      calculator.style.display = 'block';
-      localStorage.setItem('calculatorDisplayed', 'true');
-    }
-  }
-});
-
-if (localStorage.getItem('calculatorDisplayed') === 'true') {
-  calculator.style.display = 'block';
-}
-
 
 	</script>
 <script src="https://go.statuspage.io/embed/script.js"></script>
