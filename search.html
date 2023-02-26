@@ -24,17 +24,21 @@
       adUnits[i].style.display = "none";
   }
 </script>
-<nav class="navbar bg-body-tertiary">
+<nav class="navbar bg-body-tertiary" data-bs-theme="dark">
   <div class="container">
     <a class="navbar-brand" href="index.html">
-      <img src="Untitled.png" alt="Go!" width="30" height="24">
+      <img src="Untitled.png" alt="Go!" width="70" height="70">
     </a>
   </div>
-<a href="/index.html">
-  <img class="center" id="my-img"
-src="Untitled.png" width="70" height="70" 
-alt="https://gosearch.ga/" title="Goooooooooooooooooo!" style="float:left;margin:20px 10px;" />
-</a>
+	
+<form id="standard" method="get" action="/search.html">
+  <div id="animated-2" class="form-group">
+    <input type="text" class="form-control" name="q" maxlength="150" id="search-bar" placeholder="Search the web with Go!...">
+  </div>
+  <input type="submit" value="Go!" class="btn btn-primary">
+</form>
+
+
 </nav>
 
 
