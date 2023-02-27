@@ -98,4 +98,17 @@
  <p class="description-text">
    For more questions or comments about donation, contact Go! Group at gosearch@gosearch.ga, mention @gosearchoff on your tweet or DM on Twitter.
   </p>
+<script>
+const queryString = window.location.search;
+$(window).scroll(function (e) {
+  var $el = $('.fixedElement');
+  var isPositionFixed = ($el.css('position') == 'fixed');
+  if ($(this).scrollTop() > 200 && !isPositionFixed) {
+    $el.css({ 'position': 'fixed', 'top': '0px' });
+  }
+  if ($(this).scrollTop() < 200 && isPositionFixed) {
+    $el.css({ 'position': 'static', 'top': '0px' });
+  }
+});
+	</script>
 </body>
