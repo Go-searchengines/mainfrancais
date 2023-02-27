@@ -16,7 +16,7 @@
     content="Untitled.png"
   />
   <meta property="og:title" content="Go!/Download Go! App" />
-  <meta property="og:description" content="Go!: Download Go! App For Windows, Android and Linux. (Android and Linux Coming Soon)" />
+  <meta property="og:description" content="Go!: Download Go! App For Windows, Android and Linux. (Linux Coming Soon)" />
   <meta property="og:image:width" content="1000" />
   <meta property="og:image:height" content="730" />
   <meta name="theme-color" content="#0033cc" />
@@ -92,10 +92,7 @@
     </p>
   <h3 class="weebo-title">Download for Android</h3>
    <center>
-<a href="">
-  <button type="button" class="btn btn-primary">Soon...</button>
-
-</a>
+ <a href="https://drive.google.com/uc?export=download&id=1C9PzXwV7hQaNj0yuqJbyMz-an9Ymp3uv" class="btn btn-primary">Download</a>
 </center>
   
  <h3 class="weebo-title">Linux</h3>
@@ -110,5 +107,17 @@
 <p class="description-text">
    For more questions or comments about the app, contact Go! Group at gosearch@gosearch.ga, mention @gosearchoff on your tweet or DM on Twitter.
     </p>
-
+<script>
+const queryString = window.location.search;
+$(window).scroll(function (e) {
+  var $el = $('.fixedElement');
+  var isPositionFixed = ($el.css('position') == 'fixed');
+  if ($(this).scrollTop() > 200 && !isPositionFixed) {
+    $el.css({ 'position': 'fixed', 'top': '0px' });
+  }
+  if ($(this).scrollTop() < 200 && isPositionFixed) {
+    $el.css({ 'position': 'static', 'top': '0px' });
+  }
+});
+	</script>
 </body>
