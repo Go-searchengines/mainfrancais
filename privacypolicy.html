@@ -35,7 +35,7 @@
 </head>
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
-    	   <a class="navbar-brand" href="#">
+    	   <a class="navbar-brand" href="index.html">
       <img src="Untitled.png" alt="Go!" width="50" height="50">
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -109,6 +109,18 @@ We may update this privacy policy from time to time. We will notify you of any c
 <p class="description-text">
    For more questions or comments about the Privacy Policy, contact Go! Group at gosearch@gosearch.ga, mention @gosearchoff on your tweet or DM on Twitter.
     </p>
-
+<script>
+const queryString = window.location.search;
+$(window).scroll(function (e) {
+  var $el = $('.fixedElement');
+  var isPositionFixed = ($el.css('position') == 'fixed');
+  if ($(this).scrollTop() > 200 && !isPositionFixed) {
+    $el.css({ 'position': 'fixed', 'top': '0px' });
+  }
+  if ($(this).scrollTop() < 200 && isPositionFixed) {
+    $el.css({ 'position': 'static', 'top': '0px' });
+  }
+});
+	</script>
 </body>
 
