@@ -23,7 +23,19 @@
   <body>
 
 
-
+ <div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" style="float: center; background-color: #3333cc;" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+    ///
+  </button>
+  <ul class="dropdown-menu">
+<li><a class="dropdown-item" href="https://addons.mozilla.org/en-US/firefox/addon/go-extension/" target="_blank">Get the Firefox extension.</a></li>
+<li><a class="dropdown-item" href="./download.html">Download the app</a></li>
+  <li><a class="dropdown-item" href="./addsearchtoyourwebsite.html">Add Search Box to your website</a></li>
+  <li><a class="dropdown-item" href="./donate.html">Make a donate for Resulti</a></li>
+  <li><a class="dropdown-item" href="./privacypolicy.html" >Privacy Policy </a></li>
+  <li><a class="dropdown-item" href="./about.html">About Resulti</a></li>
+  </ul>
+</div>
 
   <br>
   <br>
@@ -42,19 +54,7 @@ alt="" title="Goooooooooooooooooo!" style="float:center-top;margin:0 10px 10px;"
 
 
 
- <div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" style="float: center; background-color: #3333cc;" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-    ///
-  </button>
-  <ul class="dropdown-menu">
-<li><a class="dropdown-item" href="https://addons.mozilla.org/en-US/firefox/addon/go-extension/" target="_blank">Get the Firefox extension.</a></li>
-<li><a class="dropdown-item" href="./download.html">Download the app</a></li>
-  <li><a class="dropdown-item" href="./addsearchtoyourwebsite.html">Add Search Box to your website</a></li>
-  <li><a class="dropdown-item" href="./donate.html">Make a donate for Resulti</a></li>
-  <li><a class="dropdown-item" href="./privacypolicy.html" >Privacy Policy </a></li>
-  <li><a class="dropdown-item" href="./about.html">About Resulti</a></li>
-  </ul>
-</div>
+
     </center>
 <br>
 <br>
@@ -441,6 +441,39 @@ document.getElementById("standard").addEventListener("submit", function(event) {
 console.log('%cALERT!!! STOP NOW', 'font-size: 24px;');
 
 	</script>
+	<style>
+	.dropdown {
+  position: relative;
+  display: inline-block;
+  float: right;
+  margin-right: 20px;
+}
+
+.dropdown-menu {
+  position: absolute;
+  right: 0;
+  top: 100%;
+  z-index: 1000;
+  display: none;
+  float: right;
+  min-width: 160px;
+  padding: 5px 0;
+  margin: 2px 0 0;
+  font-size: 14px;
+  text-align: right;
+  list-style: none;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.175);
+}
+
+.dropdown-menu.show {
+  display: block;
+}
+
+	
+	</style>
   </body>
 </html>
 
