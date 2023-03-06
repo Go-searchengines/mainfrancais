@@ -27,21 +27,6 @@
 
 
 
-  <br>
-  <br>
-  
-    <center>
-<a href="">
-    <img class="left" id="my-img"
-src="Untitled.png" width="225" height="225" 
-alt="" title="Goooooooooooooooooo!" style="float:center-top;margin:0 10px 10px;" />
-</a>
-  </center>
-    </center>
-  <br>
- <br>
- <center>
-
 
  <div class="dropdown">
   <button class="btn btn-secondary dropdown-toggle" style="float: center; background-color: #3333cc;" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -56,6 +41,68 @@ alt="" title="Goooooooooooooooooo!" style="float:center-top;margin:0 10px 10px;"
   <li><a class="dropdown-item" href="./about.html">About Resulti</a></li>
   </ul>
 </div>
+<style>
+  .dropdown {
+  position: relative;
+  display: inline-block;
+  float: right;
+  margin-right: 20px;
+  margin-top: 35px;
+}
+
+.dropdown-menu {
+  position: absolute;
+  right: 0;
+  top: 100%;
+  z-index: 1000;
+  display: none;
+  float: right;
+  min-width: 160px;
+  padding: 5px 0;
+  margin: 2px 0 0;
+  font-size: 14px;
+  text-align: right;
+  list-style: none;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.175);
+}
+
+.dropdown-menu.show {
+  display: block;
+}
+
+</style>
+
+<a href="">
+    <img class="left" id="my-img"
+src="Untitled.png" width="225" height="225" 
+alt="" title="Goooooooooooooooooo!" style="float:center-top;margin:0 10px 10px;" />
+</a>
+<style>
+  /* style pour l'image */
+#my-img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Media query pour les écrans plus petits */
+@media screen and (max-width: 768px) {
+  #my-img {
+    max-width: 50%;
+  }
+}
+
+</style>
+
+
+  <br>
+ <br>
+ <center>
+
+
+
 
 
     </center>
@@ -239,8 +286,8 @@ var keyHandlerMinecraft = function (event) {
  <p><ion-icon size="large" name="shield-half-outline"></ion-icon> No innapropriate/dangerous website</p>
 <p><ion-icon size="large" name="logo-google"></ion-icon>An Google Alertnative</p>
 <p><ion-icon size="large"name="bag-check-outline"></ion-icon>Private, No Tracking...</p> 
-<p><ion-icon size="large"  name="trail-sign-outline"></ion-icon>Simple, Easy to use!</p>
-  <p><ion-icon  size="large" name="sparkles-outline"></ion-icon>Clean interface</p>
+
+
 	  </center>
   <script>
     const phrases = ['to escape tracker', 'to search in private', 'to navigate without dangerous website','(and without innapropriate website)', 'to search without ADS', 'to find website more easy with filter','to espace GAFAM']; // Les phrases à écrire
@@ -448,12 +495,20 @@ document.getElementById("standard").addEventListener("submit", function(event) {
 }
 </style>
 <script>
-console.log('%cALERT!!! STOP NOW', 'font-size: 24px;');
+console.log('%cALERT!!! STOP NOW', 'font-size: 100px;');
 
 	</script>
-	<style>
 
-	</style>
+<style>
+@media only screen and (max-width: 975px) {
+  .my-img {
+    width: 155px ;
+    height: 55px ;
+    
+  }
+}
+</style>
+
 	<style>
 	ion-icon {
   color: white;
@@ -461,7 +516,3 @@ console.log('%cALERT!!! STOP NOW', 'font-size: 24px;');
 	</style>
   </body>
 </html>
-
-
-
-
