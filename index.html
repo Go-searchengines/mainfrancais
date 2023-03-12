@@ -437,10 +437,18 @@ var keyHandlerMinecraft = function (event) {
 		});
 	</script>
 	<script>
-// Ajouter un événement click au bouton "Centrer l'image"
+// Vérifier si l'image est centrée dans le stockage local
+if (localStorage.getItem('imageCentred') === 'true') {
+  // Si elle est centrée, ajouter la classe "centered" à l'image
+  document.getElementById('my-img').classList.add('centered');
+}
+
+// Ajouter un événement click au bouton
 document.getElementById('my-button').addEventListener('click', function() {
   // Ajouter la classe "centered" à l'image
   document.getElementById('my-img').classList.add('centered');
+  // Enregistrer l'état de l'image dans le stockage local
+  localStorage.setItem('imageCentred', 'true');
 });
 
 	      </script>
