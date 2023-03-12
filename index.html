@@ -398,7 +398,8 @@ var keyHandlerMinecraft = function (event) {
 	</select>
 
 	<button id="reset-button">Reset to default</button>
-
+        
+	<button id="my-button">Old layout</button>
 	<script>
 		const fontSelect = document.getElementById('font-select');
 		const colorSelect = document.getElementById('color-select');
@@ -434,7 +435,30 @@ var keyHandlerMinecraft = function (event) {
 			localStorage.clear();
 			location.reload();
 		});
-	</script>   
+	</script>
+	<script>
+	// Vérifier si l'image est centrée dans le stockage local
+if (localStorage.getItem('imageCentred') === 'true') {
+  // Si elle est centrée, ajouter la classe "centered" à l'image
+  document.getElementById('my-img').classList.add('centered');
+}
+
+// Ajouter un événement click au bouton "Centrer l'image"
+document.getElementById('my-button').addEventListener('click', function() {
+  // Ajouter la classe "centered" à l'image
+  document.getElementById('my-img').classList.add('centered');
+  // Enregistrer l'état de l'image dans le stockage local
+  localStorage.setItem('imageCentred', 'true');
+});
+
+// Ajouter un événement click au bouton "Reset to default"
+document.getElementById('reset-button').addEventListener('click', function() {
+  // Supprimer la classe "centered" de l'image
+  document.getElementById('my-img').classList.remove('centered');
+  // Supprimer l'état de l'image du stockage local
+  localStorage.removeItem('imageCentred');
+});
+	      </script>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
