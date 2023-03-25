@@ -233,11 +233,7 @@ input[type="submit"] {
  
 </div>
 
-<script src="https://www.google.com/jsapi"></script>
-<script>google.load('search', '1');</script>
-<script>var customSearchOptions = {}; 
-var customSearchControl = new google.search.CustomSearchControl(
-  'cx=f399fdfe19d0b4c32', customSearchOptions);</script>
+
 
 
 
@@ -310,50 +306,7 @@ input[type="submit"] {
   </PageMap>-->
 	</script>
  
-<script>
-  window.addEventListener('load', function() {
-    // Vérifiez si le navigateur prend en charge la fonctionnalité 'doNotTrack'
-    if (navigator.doNotTrack == "1") {
-      // Si la fonctionnalité 'doNotTrack' est activée, ajoutez un header 'DNT' à chaque requête AJAX
-      var oldXHR = window.XMLHttpRequest;
-      function newXHR() {
-        var realXHR = new oldXHR();
-        realXHR.addEventListener("readystatechange", function() {
-          if(realXHR.readyState==4 && realXHR.status==200) {
-            var headers = realXHR.getAllResponseHeaders().toLowerCase();
-            if (headers.indexOf('google-analytics') >= 0) {
-              // Si la réponse contient un tracker Google Analytics, ignorez-la
-              return;
-            }
-          }
-        }, false);
-        return realXHR;
-      }
-      window.XMLHttpRequest = newXHR;
-    }
-  }, false);
-</script>
-<!-- Supprimez le script de suivi de Google Analytics -->
-<script>
-  // Récupérez tous les scripts du site web
-  var scripts = document.getElementsByTagName("script");
-  // Parcourez tous les scripts
-  for (var i = 0; i < scripts.length; i++) {
-    // Si le script est un script de suivi Google Analytics
-    if (scripts[i].src.indexOf("google-analytics.com/analytics.js") != -1) {
-      // Supprimez-le
-      scripts[i].parentNode.removeChild(scripts[i]);
-    }
-  }
-</script>
 
-<!-- Bloquez les appels à Google Analytics -->
-<script>
-  // Écrasez la fonction 'ga' de Google Analytics
-  window.ga = function() {
-    // Ne faites rien
-  };
-</script>
 <script>
 javascript:(function(){adid=['adBlock','tadsb'];g=function(x){css=x.createElement('style');css.type='text/css';css.innerHTML='.gsc-adBlock,#adBlock,#tadsb,iframe[src*="doubleclick.net"]{display:none;}';x.body.appendChild(css);for(i=0;i<adid.length;i++){a=x.getElementById(adid[i]);if(a)a.parentElement.removeChild(a)}};f=function(s){g(s);ifrs=s.getElementsByTagName('iframe');if(ifrs){for(i=0;i<ifrs.length;i++){d=ifrs[i].contentWindow.document;f(d)}}};f(document)})();
 </script>
@@ -436,25 +389,7 @@ return false;
 
 <script src="https://go.statuspage.io/embed/script.js"></script>
  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-<script>
-  (function() {
-    var cx = 'f399fdfe19d0b4c32';
-    var gcse = document.createElement('script');
-    gcse.type = 'text/javascript';
-    gcse.async = true;
-    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
-    var s = document.getElementsByTagName('script')[0];
-    s.parentNode.insertBefore(gcse, s);
-    // Bloquer les trackers de Google CSE
-    s.onload = function() {
-      var gcseiframe = document.querySelector('iframe[src*="google.com/cse"]');
-      if (gcseiframe) {
-        gcseiframe.setAttribute('data-src', gcseiframe.getAttribute('src'));
-        gcseiframe.removeAttribute('src');
-      }
-    };
-  })();
-</script>
+
 
   
 <html>
