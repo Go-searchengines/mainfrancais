@@ -1,4 +1,4 @@
-<title>Go!/Game</title>
+<title>Jeux|Resulti</title>
 <head>
   <link
     href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@1,600&display=swap"
@@ -15,11 +15,11 @@
     property="og:image"
     content="Untitled.png"
   />
-  <meta property="og:title" content="Go!/Game" />
-  <meta property="og:description" content="Go!: Here you can play mini game!" />
+  <meta property="og:title" content="Jeux|Resulti" />
+  <meta property="og:description" content="Ici vous pouvez jouer a des mini jeux!" />
   <meta property="og:image:width" content="1000" />
   <meta property="og:image:height" content="730" />
-  <meta name="theme-color" content="#0033cc" />
+  <meta name="theme-color" content="#03b1d8" />
   <link
     href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
     rel="stylesheet"
@@ -34,7 +34,84 @@
   <link rel="stylesheet" href="donate.css" />
 </head>
 <body>
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    	   <a class="navbar-brand" href="index.html">
+      <img src="Untitled.png" alt="Go!" width="50" height="50">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Products
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="addsearchboxtoyourwebsite.html">Resulti Search Simple Boite</a></li>
+            <li><a class="dropdown-item" href="download.html">Application</a></li>
+	      <li><a class="dropdown-item" href="game.html">Resulti Jeux</a></li>
+              <li><a class="dropdown-item" href="weather.html">Resulti Meteo</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Other
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="donate.html">Don</a></li>
+            <li><a class="dropdown-item" href="privacypolicy.html">Politique de confidenlite</a></li>
+            <li><a class="dropdown-item" href="about.html">A propos</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<body>
+  <div class="container">
+    <div class="center">
+      <img
+        src="Untitled.png"
+        width="20%"
+      />
+    </div>
+    <h1 class="weebo-title">Resulti Jeux</h1>
+   <h3 class="weebo-title">Tetris</h3>                      
+    <center>
 
-CLOSED, THANKS YOU FOR PLAYING
+ <a href="" class="btn btn-primary">Soon</a>
+
+    </center>
+    </p>
+  <h3 class="weebo-title">Breakout</h3>
+   <center>
+ <a href="" class="btn btn-primary">Soon</a>
+</center>
+  
+ <h3 class="weebo-title">Snake</h3>
+ <center>
+ <a href="" class="btn btn-primary">Soon</a>
+</center>
+
+
+<p class="description-text">
+ Pour plus de questions ou commentaires sur les mini-jeux, contactez Resulti Group à contact@resulti.net ou mentionnez @resultisearch sur votre tweet ou DM sur Twitter.
+    </p>
+<script>
+const queryString = window.location.search;
+$(window).scroll(function (e) {
+  var $el = $('.fixedElement');
+  var isPositionFixed = ($el.css('position') == 'fixed');
+  if ($(this).scrollTop() > 200 && !isPositionFixed) {
+    $el.css({ 'position': 'fixed', 'top': '0px' });
+  }
+  if ($(this).scrollTop() < 200 && isPositionFixed) {
+    $el.css({ 'position': 'static', 'top': '0px' });
+  }
+});
+	</script>
 
 </body>
+
